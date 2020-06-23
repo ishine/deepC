@@ -79,6 +79,7 @@ packages = setuptools.find_packages()
 
 tests_require = []
 tests_require.append('unittest')
+tests_require.append('mnist')
 install_requires = []
 install_requires.extend([
     'onnx==1.5.0',
@@ -115,8 +116,8 @@ setuptools.setup(
     distclass=binaryDist,
     entry_points={
         'console_scripts': [
-            'onnx-cpp = deepC.scripts.onnx2cpp:main',
-            'compile-onnx = deepC.scripts.onnx2exe:main',
+            'onnx-cpp = deepC.compiler.onnx2cpp:main',
+            'compile-onnx = deepC.compiler.onnx2exe:main',
         ]
     },
     dependency_links=[]
